@@ -10,8 +10,8 @@ web/bundles/*
 
 # Configuration files
 app/config/parameters.ini
-<<<<<<< HEAD
 app/config/parameters.yml
-=======
-app/config/parameters.yml
->>>>>>> 12c92cc858adaad0e9bb798a4a76fd29614f6ce9
+
+#NetBeans
+nbproject/*
+
