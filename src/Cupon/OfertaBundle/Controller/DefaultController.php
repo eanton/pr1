@@ -9,7 +9,7 @@ class DefaultController extends Controller
 {
     public function ayudaAction()
     {
-        //return $this->render('OfertaBundle:Default:index.html.twig', array('name' => $name));
-        return new Response('Ayuda');
+        return $this->render('OfertaBundle:Default:ayuda.html.twig');
+        //return new Response('Ayuda');
     }
 }
