@@ -126,7 +126,6 @@ class Usuario
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-    
         return $this;
     }
 
@@ -379,7 +378,6 @@ class Usuario
     public function setCiudad(\Cupon\CiudadBundle\Entity\Ciudad $ciudad)
     {
         $this->ciudad = $ciudad;
-    
         return $this;
     }
 

@@ -3,6 +3,7 @@
 namespace Cupon\OfertaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Cupon\OfertaBundle\Util\Util;
 
 /**
  * Cupon\OfertaBundle\Entity\Oferta
@@ -41,6 +42,13 @@ class Oferta
      * @ORM\Column(name="descripcion", type="text")
      */
     private $descripcion;
+    
+     /**
+     * @var string condiciones
+     *
+     * @ORM\Column(name="condiciones", type="text")
+     */
+    private $condiciones;
 
     /**
      * @var string $foto
@@ -55,6 +63,13 @@ class Oferta
      * @ORM\Column(name="precio", type="decimal")
      */
     private $precio;
+    
+    /**
+     * @var float $descuento
+     *
+     * @ORM\Column(name="descuento", type="decimal")
+     */
+    private $descuento;
 
     /**
      * @var \DateTime $fecha_publicacion
@@ -117,7 +132,7 @@ class Oferta
     public function setNombre($nombre)
     {
         $this->nombre = $nombre;
-    
+        $this->slug = Util::getSlug($nombre);
         return $this;
     }
 
@@ -140,7 +155,6 @@ class Oferta
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
         return $this;
     }
 
@@ -175,6 +189,28 @@ class Oferta
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+    
+        /**
+     * Set condiciones
+     *
+     * @param string $condiciones
+     * @return Oferta
+     */
+    public function setCondiciones($condiciones)
+    {
+        $this->condiciones = $condiciones;
+        return $this;
+    }
+
+    /**
+     * Get condiciones
+     *
+     * @return string 
+     */
+    public function getCondiciones()
+    {
+        return $this->condiciones;
     }
 
     /**
@@ -363,5 +399,28 @@ class Oferta
     public function __toString()
     {
         return $this->getNombre();
+    }
+
+    /**
+     * Set descuento
+     *
+     * @param float $descuento
+     * @return Oferta
+     */
+    public function setDescuento($descuento)
+    {
+        $this->descuento = $descuento;
+    
+        return $this;
+    }
+
+    /**
+     * Get descuento
+     *
+     * @return float 
+     */
+    public function getDescuento()
+    {
+        return $this->descuento;
     }
 }
